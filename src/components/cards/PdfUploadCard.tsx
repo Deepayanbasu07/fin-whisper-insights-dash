@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from "react";
 import { FileText, Upload, X } from "lucide-react";
 
@@ -96,7 +95,6 @@ export default function PdfUploadCard() {
                     e.stopPropagation();
                     removePdf(i);
                   }}
-                  title="Remove PDF"
                 />
               </button>
             ))}
