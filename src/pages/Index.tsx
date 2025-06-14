@@ -3,6 +3,8 @@ import DashboardSidebar from "@/components/DashboardSidebar";
 import DashboardHeader from "@/components/DashboardHeader";
 import DashboardFooter from "@/components/DashboardFooter";
 
+import { TranscriptProvider } from "@/components/TranscriptProvider";
+
 import PdfUploadCard from "@/components/cards/PdfUploadCard";
 import ChatBotCard from "@/components/cards/ChatBotCard";
 import MarketIntelligenceCard from "@/components/cards/MarketIntelligenceCard";
@@ -19,28 +21,29 @@ const Index = () => {
         <DashboardSidebar />
         {/* Main dashboard grid */}
         <main className="flex-1 p-8 overflow-auto">
-          <div className="grid grid-cols-1 xl:grid-cols-6 gap-8">
-            {/* Top row: PDF Upload + ChatBot */}
-            <section className="col-span-1 xl:col-span-2 space-y-8">
-              <PdfUploadCard />
-            </section>
-            <section className="col-span-1 xl:col-span-4 space-y-8">
-              <ChatBotCard />
-            </section>
-
-            {/* Second row: Market Intelligence + Sentiment & Stock + Narrative */}
-            <section className="col-span-1 xl:col-span-2 space-y-8">
-              <MarketIntelligenceCard />
-              <EarningsReactionCard />
-            </section>
-            <section className="col-span-1 xl:col-span-2 space-y-8">
-              <SentimentCard />
-            </section>
-            <section className="col-span-1 xl:col-span-2 space-y-8">
-              <NarrativeCard />
-              <TopicSentimentCard />
-            </section>
-          </div>
+          <TranscriptProvider>
+            <div className="grid grid-cols-1 xl:grid-cols-6 gap-8">
+              {/* Top row: PDF Upload + ChatBot */}
+              <section className="col-span-1 xl:col-span-2 space-y-8">
+                <PdfUploadCard />
+              </section>
+              <section className="col-span-1 xl:col-span-4 space-y-8">
+                <ChatBotCard />
+              </section>
+              {/* Second row: Market Intelligence + Sentiment & Stock + Narrative */}
+              <section className="col-span-1 xl:col-span-2 space-y-8">
+                <MarketIntelligenceCard />
+                <EarningsReactionCard />
+              </section>
+              <section className="col-span-1 xl:col-span-2 space-y-8">
+                <SentimentCard />
+              </section>
+              <section className="col-span-1 xl:col-span-2 space-y-8">
+                <NarrativeCard />
+                <TopicSentimentCard />
+              </section>
+            </div>
+          </TranscriptProvider>
         </main>
       </div>
       <DashboardFooter />

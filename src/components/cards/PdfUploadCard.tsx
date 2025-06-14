@@ -1,16 +1,10 @@
+
 import React, { useRef, useState } from "react";
 import { FileText, Upload, X } from "lucide-react";
-
-type UploadedPDF = {
-  name: string;
-  file: File;
-  text?: string;
-  id: string;
-};
+import { useTranscript } from "../TranscriptProvider";
 
 export default function PdfUploadCard() {
-  const [pdfs, setPdfs] = useState<UploadedPDF[]>([]);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { pdfs, setPdfs, activeIndex, setActiveIndex } = useTranscript();
   const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -19,12 +13,13 @@ export default function PdfUploadCard() {
     if (!files) return;
     setLoading(true);
 
-    // Simulate extraction, replace with actual backend call
-    const uploads: UploadedPDF[] = [];
+    const uploads = [];
     for (let i = 0; i < files.length; ++i) {
       const file = files[i];
-      // Stub: Simulate extraction (replace with backend API call for actual extraction)
-      const text = await new Promise<string>((res) => setTimeout(() => res("Simulated extracted text sample from: " + file.name), 1000));
+      // Simulate extraction, replace with actual backend call
+      const text = await new Promise<string>((res) =>
+        setTimeout(() => res("Simulated extracted text sample from: " + file.name), 1000)
+      );
       uploads.push({
         name: file.name,
         file,
@@ -32,14 +27,14 @@ export default function PdfUploadCard() {
         id: Math.random().toString(36).slice(2),
       });
     }
-    setPdfs((prev) => [...prev, ...uploads]);
+    setPdfs(prev => [...prev, ...uploads]);
     setLoading(false);
     inputRef.current && (inputRef.current.value = "");
     setActiveIndex(pdfs.length);
   }
 
   function removePdf(idx: number) {
-    setPdfs((prev) => prev.filter((_, i) => i !== idx));
+    setPdfs(prev => prev.filter((_, i) => i !== idx));
     if (idx === activeIndex && pdfs.length > 1) setActiveIndex(Math.max(0, idx - 1));
     else if (pdfs.length === 1) setActiveIndex(0);
   }
