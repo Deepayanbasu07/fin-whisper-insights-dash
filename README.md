@@ -84,12 +84,6 @@ A professional, AI-powered financial analyst dashboard for investors, analysts, 
 
 ---
 
-## 📝 License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
 ## 🙏 Acknowledgements
 
 - [LangChain](https://github.com/langchain-ai/langchain)
@@ -109,4 +103,4 @@ Pull requests and issues are welcome! For major changes, please open an issue fi
 
 ## 📬 Contact
 
-For questions or support, open an issue or contact the maintainer at [your-email@example.com].
+For questions or support, open an issue or contact the maintainer at [deepayanbasu5@gmail.com].
