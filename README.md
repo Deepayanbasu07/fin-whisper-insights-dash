@@ -53,10 +53,16 @@ A professional, AI-powered financial analyst dashboard for investors, analysts, 
 ---
 
 ## 📊 How It Works
+![Image](https://github.com/user-attachments/assets/5794f1ca-cc2f-4117-a9a0-accee67f6ccd) 
+![Image](https://github.com/user-attachments/assets/c00d2e4d-9682-4f2a-a88b-cc397f178c9a)
+![Image](https://github.com/user-attachments/assets/5a99347d-b0fe-4d80-a88b-1d9e4abb55eb)
 
 - **Upload PDFs**: Drag and drop or select multiple transcripts. The app extracts text and identifies quarter/year from filenames (e.g., `Company-Q4-FY23.pdf`).
+   ![Image](https://github.com/user-attachments/assets/c8881065-6e6c-44bc-ac9e-f6da6ebf418e)
 - **Analytics**: All analytics cards aggregate data across all uploaded quarters/years, giving you a continuous, multi-year view.
+   ![Image](https://github.com/user-attachments/assets/4c19f4fa-4a18-43ce-8f25-3ed4643e9249)
 - **Sentiment & Stock Correlation**: See how sentiment scores and stock price changes move together. Granger causality analysis tells you if sentiment is a leading indicator for price.
+   ![Image](https://github.com/user-attachments/assets/f2c0b99a-8f57-4f68-9b67-4f7aaa3a574c)
 - **Chatbot**: Ask questions about your documents and get LLM-powered answers.
 
 ---
